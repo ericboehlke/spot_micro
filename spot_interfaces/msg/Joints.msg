@@ -1,0 +1,12 @@
+float64 front_right_hip
+float64 front_right_knee
+float64 front_right_ankle
+float64 front_left_hip
+float64 front_left_knee
+float64 front_left_ankle
+float64 back_right_hip
+float64 back_right_knee
+float64 back_right_ankle
+float64 back_left_hip
+float64 back_left_knee
+float64 back_left_ankle
