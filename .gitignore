@@ -1,1 +1,6 @@
 __pycache__
+log
+build
+install
+*.cpy
+*.bak

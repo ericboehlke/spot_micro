@@ -21,7 +21,8 @@ setup(
     entry_points={
         'console_scripts': [
             'joint_controller = spot_joints.joint_controller:main',
-            'joint_publisher = spot_joints.joint_publisher:main'
+            'joint_publisher = spot_joints.joint_publisher:main',
+            'joint_keyboard_controller = spot_joints.joint_keyboard_controller:main'
         ],
     },
 )

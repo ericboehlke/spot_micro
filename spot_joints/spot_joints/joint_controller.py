@@ -115,6 +115,8 @@ class JointsNode(Node):
                             Motor(blk, blk_direction, blk_origin),
                             Motor(bla, bla_direction, bla_origin)))
 
+        self.get_logger().info('Starting joint_controller node')
+
         self.subscription = self.create_subscription(
             Joints,
             'joints',
@@ -123,18 +125,18 @@ class JointsNode(Node):
         self.subscription  # prevent unused variable warning
 
     def joints_callback(self, msg):
-        self.spot.front_right.hip = msg.front_right_hip
-        self.spot.front_right.knee = msg.front_right_knee
-        self.spot.front_right.ankle = msg.front_right_ankle
-        self.spot.front_left.hip = msg.front_left_hip
-        self.spot.front_left.knee = msg.front_left_knee
-        self.spot.front_left.ankle = msg.front_left_ankle
-        self.spot.back_right.hip = msg.back_right_hip
-        self.spot.back_right.knee = msg.back_right_knee
-        self.spot.back_right.ankle = msg.back_right_ankle
-        self.spot.back_left.hip = msg.back_left_hip
-        self.spot.back_left.knee = msg.back_left_knee
-        self.spot.back_left.ankle = msg.back_left_ankle
+        self.spot.front_right.hip.set_angle(msg.front_right_hip)
+        self.spot.front_right.knee.set_angle(msg.front_right_knee)
+        self.spot.front_right.ankle.set_angle(msg.front_right_ankle)
+        self.spot.front_left.hip.set_angle(msg.front_left_hip)
+        self.spot.front_left.knee.set_angle(msg.front_left_knee)
+        self.spot.front_left.ankle.set_angle(msg.front_left_ankle)
+        self.spot.back_right.hip.set_angle(msg.back_right_hip)
+        self.spot.back_right.knee.set_angle(msg.back_right_knee)
+        self.spot.back_right.ankle.set_angle(msg.back_right_ankle)
+        self.spot.back_left.hip.set_angle(msg.back_left_hip)
+        self.spot.back_left.knee.set_angle(msg.back_left_knee)
+        self.spot.back_left.ankle.set_angle(msg.back_left_ankle)
 
         self.get_logger().info('Updated joints')
 
